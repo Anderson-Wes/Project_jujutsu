@@ -78,12 +78,12 @@
   left: -15%;
   transform: translate(-50%, -50%);
   animation: flame-animation 1s infinite;
-  opacity: 0; /* Скрыто по умолчанию */
-  transition: opacity 0.3s ease; /* Плавное появление */
+  opacity: 0;
+  transition: opacity 0.3s ease; 
 }
 
 .character:hover .flame {
-  opacity: 1; /* Пламя появляется при наведении */
+  opacity: 1;
   transition: 1s;
 }
 

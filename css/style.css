@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.character img {
+  height: 90vh;
+}
+
+.character:hover .dialogue {
+  opacity: 1;
+}
+
+.list:hover .character {
+  filter: grayscale(1) blur(10px);
+  transition: 1s;
+}
+
+.list:hover .character:hover {
+  filter: none;
+  transform: scale(1.02);
+}
+
+.dialogue {
+  position: absolute;
+  top: 40px;
+  left: 15%;
+  transform: translateX(-50%);
+  font-family: "Bangers", cursive, sans-serif;
+  letter-spacing: 0.5px;
+  background: white;
+  color: black;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  border: 3px solid black;
+  box-shadow: 3px 3px 0px black;
+  max-width: 180px;
+  text-align: center;
+}
+
+.dialogue:before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.dialogue:after {
+  content: '';
+  position: absolute;
+  bottom: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px;
+  border-style: solid;
+  border-color: #000000 transparent transparent transparent;
+}
+
+.character {
+  position: relative;
+  display: inline-block;
+}
+
+.flame {
+  position: absolute;
+  top: 0;
+  left: -15%;
+  transform: translate(-50%, -50%);
+  animation: flame-animation 1s infinite;
+  opacity: 0; /* Скрыто по умолчанию */
+  transition: opacity 0.3s ease; /* Плавное появление */
+}
+
+.character:hover .flame {
+  opacity: 1; /* Пламя появляется при наведении */
+  transition: 1s;
+}
+
+@keyframes flame-animation {
+  0% { transform: scale(1.04); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1.04); }
+}
